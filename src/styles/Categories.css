@@ -1,0 +1,29 @@
+.Category{
+    list-style: none;
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+.category_list{
+    /* border: 1px solid black; */
+}
+.category_gif{
+    /* border: 1px solid black; */
+    width: 70%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.categories_list{
+    color: rgb(151, 151, 239);
+    font-size: 30px;
+}
+
+.subcategories_list li{
+    list-style: none;
+   color: #123;
+   font-size: 25px;
+}
+

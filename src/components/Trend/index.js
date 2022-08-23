@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getTrend } from '../../store/actions'
 import TrendItem from './TrendItem'
+import '../../styles/Trend.css'
 
 function Trend() {
   const disptach = useDispatch()
@@ -11,11 +12,13 @@ function Trend() {
     disptach(getTrend())
   }, [])
   return (
-    <div>
-      {trend.map((t, index) => (
-        // eslint-disable-next-line react/no-array-index-key
-        <TrendItem key={index} {...t} />
-      ))}
+    <div className="Trend">
+      <div className="container_trend">
+        {trend.map((t, index) => (
+          // eslint-disable-next-line react/no-array-index-key
+          <TrendItem key={index} {...t} />
+        ))}
+      </div>
     </div>
   )
 }

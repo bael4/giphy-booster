@@ -7,7 +7,7 @@ export function getCategoriesReq() {
   return instance.get('categories?api_key=qgwNJOmmv98ZEevNmCuuSLmNfAezI4HW')
 }
 export function getTrendReq() {
-  return instance.get('trending?api_key=qgwNJOmmv98ZEevNmCuuSLmNfAezI4HW&limit=25&rating=g')
+  return instance.get('trending?api_key=qgwNJOmmv98ZEevNmCuuSLmNfAezI4HW&limit=50&rating=g')
 }
 
 export function getRandomReq() {

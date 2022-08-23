@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getRandom } from '../../store/actions'
+import '../../styles/Random.css'
 
 function Random() {
   const dispatch = useDispatch()
@@ -10,8 +11,8 @@ function Random() {
     dispatch(getRandom())
   }, [])
   return (
-    <div>
-      <div>
+    <div className="Random">
+      <div className="container_random">
         <img src={random?.images?.downsized_medium.url} alt="img" />
       </div>
     </div>

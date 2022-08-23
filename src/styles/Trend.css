@@ -1,0 +1,11 @@
+.Trend{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.container_trend{
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+}

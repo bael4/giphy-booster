@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getCategories } from '../../store/actions'
 import Category from './Category'
-import './Category.css'
+import '../../styles/Categories.css'
 
 function Categories() {
   const disptach = useDispatch()
@@ -23,14 +23,14 @@ function Categories() {
     console.log(value)
   }
   return (
-    <div className="main">
-      <div className="category">
+    <div className="Category">
+      <div className="category_list">
         {categories.map((category, index) => (
           // eslint-disable-next-line react/no-array-index-key
           <Category key={index} {...category} getNameByClick={getNameByClick} />
         ))}
       </div>
-      <div className="gg">
+      <div className="category_gif">
         {value?.data?.map((g, index) => (
           // eslint-disable-next-line react/no-array-index-key
           <div key={index}>
