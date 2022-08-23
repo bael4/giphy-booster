@@ -1,11 +1,16 @@
 /* eslint-disable react/react-in-jsx-scope */
-import Categories from './Category'
+
+import Navbar from './navbar/Navbar'
+import AppRouter from './router/AppRouter'
 
 function App() {
   return (
     // eslint-disable-next-line react/react-in-jsx-scope
     <div>
-      <Categories />
+      <header>
+        <Navbar />
+      </header>
+      <AppRouter />
     </div>
   )
 }

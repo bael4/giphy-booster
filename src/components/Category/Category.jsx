@@ -1,22 +1,14 @@
 import React, { useState } from 'react'
 import { PropTypes } from 'prop-types'
-import axios from 'axios'
 // eslint-disable-next-line react/prop-types, no-unused-vars
-function Category({ name, subcategories, ...props }) {
+function Category({ name, subcategories, getNameByClick, ...props }) {
   const [isActive, setIsActive] = useState(false)
-  const [value, setValue] = useState([])
+  // console.log(name)
   const toogleActive = () => setIsActive(!isActive)
-  const getNameByClick = () => {
-    axios
-      .get(
-        `https://api.giphy.com/v1/gifs/search?api_key=qgwNJOmmv98ZEevNmCuuSLmNfAezI4HW&q=${name}&limit=25&offset=0&rating=g&lang=en`,
-      )
-      .then((r) => setValue(r.data))
-    console.log(value)
-  }
-  const handlerCategoryClick = () => {
+
+  const handlerCategoryClick = (name) => {
     toogleActive()
-    getNameByClick()
+    getNameByClick(name)
   }
   function renderSubcategories() {
     if (isActive && subcategories && subcategories.length) {
@@ -34,19 +26,10 @@ function Category({ name, subcategories, ...props }) {
 
   return (
     <li>
-      <span aria-hidden onClick={handlerCategoryClick}>
+      <span aria-hidden onClick={(name) => handlerCategoryClick(name)}>
         {name}
       </span>
       {renderSubcategories()}
-      <div>
-        {value?.data?.map((g, index) => (
-          // eslint-disable-next-line react/no-array-index-key
-          <div key={index}>
-            <p>{g.title}</p>
-            <img src={g.images.fixed_height.url} alt="img" />
-          </div>
-        ))}
-      </div>
     </li>
   )
 }

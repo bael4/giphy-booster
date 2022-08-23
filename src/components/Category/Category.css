@@ -1,0 +1,15 @@
+.main{
+ display: flex;
+ justify-content: space-evenly;
+}
+
+.category{
+    list-style: none;
+    /* border: 1px solid black; */
+    text-align: center;
+}
+
+.gg{
+    /* border: 1px solid black; */
+    width: 70%;
+}

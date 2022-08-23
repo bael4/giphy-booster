@@ -1,8 +1,10 @@
 import { applyMiddleware, combineReducers, compose, createStore } from 'redux'
 import thunk from 'redux-thunk'
 import { categoryReducer } from './category'
+import { trendReducer } from './trend'
+import { randomReducer } from './random'
 
-const rootReducer = combineReducers({ categoryReducer })
+const rootReducer = combineReducers({ categoryReducer, trendReducer, randomReducer })
 export const store = createStore(
   rootReducer,
   compose(
